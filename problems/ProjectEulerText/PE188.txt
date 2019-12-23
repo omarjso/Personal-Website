@@ -1,0 +1,22 @@
+
+
+def ord(a, two_exponent, five_exponent):
+    if two_exponent == 8 and five_exponent == 8:
+        return [4, 7]
+    elif two_exponent == 4 and five_exponent == 7:
+        return [2, 6]
+    else:
+        for i in range(0, two_exponent + 2):
+            for j in range(0, five_exponent):
+                if (1777 ** ((2 ** i) * (5 ** j))) % ((2 ** two_exponent) * (5 ** five_exponent)) == 1:
+                       return [i, j]
+
+
+ord_sequence = {0: [8, 8]}
+
+for i in range(1, 9):
+    ord_sequence[i] = ord(1777, ord_sequence[i - 1][0], ord_sequence[i - 1][1])
+    if ord_sequence[i] == 2:
+        break
+
+print(ord_sequence)

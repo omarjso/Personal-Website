@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Research Topics</title>
+		<meta charset="UTF-16">
+		<style>
+			pre, code {
+				font-family: monospace, monospace;
+					 
+			}
+			pre {
+				overflow-wrap: break-word;
+			}
+			pre > code[class]::before {
+				content: attr(class);
+				display: block;
+				font-size: small;
+				font-style: italic;
+				color: #d8ff00;
+				margin: -50px 50px -10px auto;
+			}
+			figure {margin-right: 63%;}
+		</style>
+		<link href="Prism_SyntaxHighlighting/prism.css" rel="stylesheet" />	
+	</head>
+	<body>
+		<figure>
+			<script src="Prism_SyntaxHighlighting/prism.js"></script>
+			<pre>	
+			<code contenteditable spellcheck="false" class="language-python">
+import math
+
+
+def is_prime(p):
+    if p == 2:
+        return 1
+    elif p == 1:
+        return 0
+    else:
+        for x in range(2, math.floor(math.sqrt(p))+1):
+            if p % x == 0:
+                return 0
+        return 1
+
+
+def biggest_prime(num):
+    for x in range(0, math.ceil(num/510510) + 1):
+        if num % (math.ceil(num/510510) - x) == 0 and is_prime(math.ceil(num/510510) - x):
+            return math.ceil(num/510510) - x
+
+
+print(biggest_prime(600851475143))
+</code>
+			</pre>
+		</figure>	
+	<body>
+</html>

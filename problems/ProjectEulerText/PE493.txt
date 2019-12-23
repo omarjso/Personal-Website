@@ -1,0 +1,39 @@
+import math
+from functools import reduce
+import operator
+
+
+def prod(iterable):
+    return reduce(operator.mul, iterable, 1)
+
+
+prob_dict = {}
+
+for a in range(0, 11):
+    for b in range(0, min(11, 21 - a)):
+        for c in range(0, min(11, 21 - a - b)):
+            for d in range(0, min(11, 21 - a - b - c)):
+                for e in range(0, min(11, 21 - a - b - c - d)):
+                    for f in range(0, min(11, 21 - a - b - c - d - e)):
+                        for g in range(0, min(11, 21 - a - b - c - d - e - f)):
+                            if (a + b + c + d + e + f + g) == 20:
+                                print(a, b, c, d, e, f, g)
+                                List = [a, b, c, d, e, f, g]
+                                while 0 in List:
+                                    List.remove(0)
+                                varity = len(List)
+                                if varity in prob_dict:
+                                    prob_dict[varity] += prod(math.factorial(10)/(math.factorial(10 - i) *
+                                                              math.factorial(i)) for i in List)
+                                else:
+                                    prob_dict[varity] = prod(math.factorial(10)/(math.factorial(10 - i) *
+                                                             math.factorial(i)) for i in List)
+
+nominator = 0
+denominator = 0
+
+for i in prob_dict:
+    nominator += i * prob_dict[i]
+    denominator += prob_dict[i]
+print(prob_dict)
+print(nominator / denominator)

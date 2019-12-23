@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Research Topics</title>
+		<meta charset="UTF-16">
+		<style>
+			pre, code {
+				font-family: monospace, monospace;
+					 
+			}
+			pre {
+				overflow-wrap: break-word;
+			}
+			pre > code[class]::before {
+				content: attr(class);
+				display: block;
+				font-size: small;
+				font-style: italic;
+				color: #d8ff00;
+				margin: -50px 50px -10px auto;
+			}
+			figure {margin-right: 63%;}
+		</style>
+		<link href="Prism_SyntaxHighlighting/prism.css" rel="stylesheet" />	
+	</head>
+	<body>
+		<figure>
+			<script src="Prism_SyntaxHighlighting/prism.js"></script>
+			<pre>	
+			<code contenteditable spellcheck="false" class="language-python">
+import math
+
+
+def is_prime(p):
+    if p == 2:
+        return 1
+    else:
+        for x in range(2, math.floor(math.sqrt(p))+1):
+            if p % x == 0:
+                return 0
+        return 1
+
+
+def power_fixing(n, k):
+    m = n
+    for x in range(2, m + 1):
+        if is_prime(x) == 1 and n % x == 0:
+            newPower = x**k
+            n = n * newPower
+    newn = int(n / m)
+    return newn
+
+
+def sum_of_power_fixing(limit_of_sum, power):
+    psum = 0
+    for x in range(1, limit_of_sum + 1):
+        psum = psum + int(power_fixing(x, power))
+    return psum
+
+
+final_sum = 0
+for k in range(1, 51):
+    final_sum = final_sum + (sum_of_power_fixing(10**12, k) % 1000000007)
+    print(k)
+print(final_sum % 1000000007)
+</code>
+			</pre>
+		</figure>	
+	<body>
+</html>

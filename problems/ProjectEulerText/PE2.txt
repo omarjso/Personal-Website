@@ -1,0 +1,17 @@
+a = 0
+b = 1
+Fib = [0, 1]
+
+
+while b < 4000000:
+    a, b = b, a + b
+    Fib.append(b)
+
+print(Fib)
+
+finalSum = 0
+for x in Fib:
+    if x % 2 == 0:
+        finalSum += x
+
+print(finalSum)

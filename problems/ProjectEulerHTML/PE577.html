@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Research Topics</title>
+		<meta charset="UTF-16">
+		<style>
+			pre, code {
+				font-family: monospace, monospace;
+					 
+			}
+			pre {
+				overflow-wrap: break-word;
+			}
+			pre > code[class]::before {
+				content: attr(class);
+				display: block;
+				font-size: small;
+				font-style: italic;
+				color: #d8ff00;
+				margin: -50px 50px -10px auto;
+			}
+			figure {margin-right: 63%;}
+		</style>
+		<link href="Prism_SyntaxHighlighting/prism.css" rel="stylesheet" />	
+	</head>
+	<body>
+		<figure>
+			<script src="Prism_SyntaxHighlighting/prism.js"></script>
+			<pre>	
+			<code contenteditable spellcheck="false" class="language-python">
+import math
+
+final_sum = 1
+
+for n in range(4, 12346):
+    m = math.floor(n / 3)
+    final_sum += int(m * (m + 1) * ((2 * m + 1) * (n - 3) + 3 * n - 9 * m * (m + 1) / 2) / 4)
+    if n % 3 == 0:
+        final_sum += int(m * (m + 1) / 2)
+
+
+print(final_sum)
+</code>
+			</pre>
+		</figure>	
+	<body>
+</html>

@@ -1,0 +1,10 @@
+
+a, b = 0, 1
+index = 1
+while len(str(b)) <= 1000:
+    if len(str(b)) == 1000:
+        print(index)
+        break
+    else:
+        a, b = b, a + b
+        index += 1

@@ -1,0 +1,12 @@
+import math
+
+number_of_ways = 0
+for two_tiles in range(0, 26):
+    for three_tiles in range(0, math.floor((50 - 2 * two_tiles) / 3) + 1):
+        for four_tiles in range(0, math.floor((50 - 2 * two_tiles - 3 * three_tiles) / 4) + 1):
+            number_of_ways += math.factorial(two_tiles + three_tiles + four_tiles) / (math.factorial(two_tiles) *
+                              math.factorial(three_tiles) * math.factorial(four_tiles)) * (math.factorial(50 - two_tiles
+                              - 2 * three_tiles - 3 * four_tiles) / (math.factorial(two_tiles + three_tiles +
+                              four_tiles) * math.factorial(50 - 2 * two_tiles - 3 * three_tiles - 4 * four_tiles)))
+
+print(number_of_ways)

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Research Topics</title>
+		<meta charset="UTF-16">
+		<style>
+			pre, code {
+				font-family: monospace, monospace;
+					 
+			}
+			pre {
+				overflow-wrap: break-word;
+			}
+			pre > code[class]::before {
+				content: attr(class);
+				display: block;
+				font-size: small;
+				font-style: italic;
+				color: #d8ff00;
+				margin: -50px 50px -10px auto;
+			}
+			figure {margin-right: 63%;}
+		</style>
+		<link href="Prism_SyntaxHighlighting/prism.css" rel="stylesheet" />	
+	</head>
+	<body>
+		<figure>
+			<script src="Prism_SyntaxHighlighting/prism.js"></script>
+			<pre>	
+			<code contenteditable spellcheck="false" class="language-python">
+import itertools as it
+
+Dice1 = [1, 2, 3, 4, 5, 6]
+Dice2 = [1, 2, 3, 4]
+
+colin = {}
+peter = {}
+
+for a, b, c, d, e, f in it.product(Dice1, Dice1, Dice1, Dice1, Dice1, Dice1):
+    if a + b + c + d + e + f in colin:
+        colin[a + b + c + d + e + f] += 1
+    else:
+        colin[a + b + c + d + e + f] = 1
+
+for a, b, c, d, e, f, g, h, i in it.product(Dice2, Dice2, Dice2, Dice2, Dice2, Dice2, Dice2, Dice2, Dice2):
+    if a + b + c + d + e + f + g + h + i in peter:
+        peter[a + b + c + d + e + f + g + h + i] += 1
+    else:
+        peter[a + b + c + d + e + f + g + h + i] = 1
+
+
+possibility = 0
+
+for i in peter:
+    for j in colin:
+        if j < i:
+            possibility += colin[j] * peter[i]
+        else:
+            break
+
+print(possibility / ((6 ** 6) * (4 ** 9)))
+</code>
+			</pre>
+		</figure>	
+	<body>
+</html>

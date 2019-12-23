@@ -1,0 +1,20 @@
+max_chain = 0
+max_num = 1
+
+for i in range(2, 1000001):
+    print(i)
+    collatz_length = 1
+    final_piece = i
+    while final_piece != 1:
+        if final_piece % 2 == 0:
+            final_piece = int(final_piece / 2)
+            collatz_length += 1
+        else:
+            final_piece = 3 * final_piece + 1
+            collatz_length += 1
+    collatz_length += 1
+    if collatz_length > max_chain:
+        max_chain = collatz_length
+        max_num = i
+
+print(max_chain, max_num)

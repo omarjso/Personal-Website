@@ -1,0 +1,8 @@
+Digits = str(2 ** 1000)
+
+calc = 0
+
+for i in range(len(Digits)):
+    calc += int(Digits[i])
+
+print(calc)

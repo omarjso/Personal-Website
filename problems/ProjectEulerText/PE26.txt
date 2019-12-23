@@ -1,0 +1,49 @@
+import math
+import time
+
+start = time.time()
+
+def is_prime(p):
+    if p == 2 or p == 3:
+        return 1
+    else:
+        for x in range(1, math.ceil((math.sqrt(p) + 1) / 6) + 1):
+            if p % 2 == 0 or p % 3 == 0:
+                return 0
+            elif p % (6 * x - 1) == 0 and p != (6 * x - 1):
+                return 0
+            elif p % (6 * x + 1) == 0 and p != (6 * x + 1):
+                return 0
+
+        return 1
+    return 0
+
+def Euler_Phi(n):
+    Phi_Val = n
+    if is_prime(n) == 1:
+        Phi_Val = n - 1
+    else:
+        for i in range(2, math.floor(math.sqrt(n)) + 1):
+            if is_prime(i) == 1 and n % i == 0:
+                Phi_Val *= (1 - 1/i)
+    return int(Phi_Val)
+
+
+def order10_mod_num(num):
+    Phi_num = Euler_Phi(num)
+    for i in range(1, num + 1):
+        if Phi_num % i == 0 and 10 ** i % num == 1:
+            return i
+    return 0
+        
+        
+list_repetition = []
+
+for i in range(1, 1000):
+    if i % 2 != 0 and i % 5 != 0:
+        list_repetition.append(order10_mod_num(i))
+
+end = time.time()
+
+print(Euler_Phi(4300000000512))
+print(end - start)

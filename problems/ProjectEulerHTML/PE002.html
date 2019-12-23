@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Research Topics</title>
+		<meta charset="UTF-16">
+		<link  href="css/headstripe.css" rel="stylesheet">	
+		<style>
+			body {
+				background-color: #c1c1c1;
+			}
+			pre, code {
+				font-family: monospace, monospace;
+					 
+			}
+			pre {
+				overflow-wrap: break-word;
+			}
+			pre > code[class]::before {
+				content: attr(class);
+				display: block;
+				font-size: small;
+				font-style: italic;
+				color: #d8ff00;
+				margin: -50px 50px -10px auto;
+			}
+			figure {margin-right: 63%;}
+			div.english {
+				margin-right: 63%;
+				margin-left: 40px;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+		<link href="Prism_SyntaxHighlighting/prism.css" rel="stylesheet">	
+	</head>
+	<body>
+		<header>
+			<div class="headstripe">
+				<h4>The Notebook</h4>
+				<img alt=":(" src="../../logo3.svg">
+			</div>
+		</header>
+		<div class="english">
+			<h3>Solution Explination:</h3>
+			<p>
+			The first part of the code tries to find all Fibonacci's and then add them to a list. This is done primarily by applying the rule of Fibbonacci's sequence F<sub>n+2</sub> = F<sub>n+1</sub> + F<sub>n</sub>. 
+			</p>
+		</div>
+		<figure>
+			<script src="Prism_SyntaxHighlighting/prism.js"></script>
+			<pre>	
+			<code contenteditable spellcheck="false" class="language-python">
+a = 0
+b = 1
+Fib = [0, 1]
+
+
+while b < 4000000:
+    a, b = b, a + b
+    Fib.append(b)
+
+finalSum = 0
+for x in Fib:
+    if x % 2 == 0:
+        finalSum += x
+
+print(finalSum)
+</code>
+			</pre>
+		</figure>
+		<div class="english">	
+			<p>
+			The second part iterates over the list produced by the previous part and checks whether an element is even. If so, the value of that element is added to the sum.
+			</p>
+		</div>
+		<figure>
+			<script src="Prism_SyntaxHighlighting/prism.js"></script>
+			<pre>	
+			<code contenteditable spellcheck="false" class="language-python">
+finalSum = 0
+for x in Fib:
+    if x % 2 == 0:
+        finalSum += x
+
+print(finalSum)
+</code>			
+			</pre>
+		</figure>
+		<div class="english">
+			<h3>Remarks and Notes:</h3>
+			<p>
+				Rather than appending the item into a list and then later iterating over that list, I could've checked whether new elements were even rightaway and summed them. 
+			</p>
+		</div>
+	<body>
+</html>

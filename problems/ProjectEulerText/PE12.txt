@@ -1,0 +1,33 @@
+import math
+from CheckPrime import is_prime
+
+primes = []
+done = 0
+n = 3
+
+
+while done == 0:
+    triangle_n = n
+    number_of_divisors = 1
+    for x in range(2, math.floor(triangle_n / 2) + 1):
+        if x in primes and triangle_n % x == 0:
+            power_x = 0
+            calc_vx = triangle_n
+            while calc_vx % x == 0:
+                calc_vx /= x
+                power_x += 1
+            number_of_divisors *= (power_x + 1)
+        elif is_prime(x) == 1 and triangle_n % x == 0:
+            primes.append(x)
+            power_x = 0
+            calc_vx = triangle_n
+            while calc_vx % x == 0:
+                calc_vx /= x
+                power_x += 1
+            number_of_divisors *= (power_x + 1)
+    if number_of_divisors > 500:
+        done == 1
+    print(n, number_of_divisors)
+    n += 1
+
+print(str(n) + " is the winner")
