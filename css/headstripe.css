@@ -1,21 +1,85 @@
-.headstripe {
-	height:60px;
+div#heading{
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-image: url(../website_heading.jpg);
+	height: 47.5vmin;
+}
+
+div#headingWrapper {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1vmin;
+}
+
+div#headingText{
+	font-family: 'caveat', cursive;
+	margin-top: 1vmin;
+	color: #fff;
+	font-size: 4.5vmin;
+	text-align: center;
+}
+
+div#stripeText {
+	margin-top: 0.5%;
+}
+
+div#fixedLinks {
+	margin-top: 1.2%;
+	float: right;
+	margin-right: 2vw;
+	color: #fff;
+}
+	
+div#fixedHeadingText{
+	font-family: 'caveat', cursive;
+	margin-top: 0.5%;
+	color: #fff;
+	font-size: 4.5vmin;
+	float: left;
+}
+
+div#headStacking {
+	top: 0px;
+	position: relative;
+	z-index: 1;
+}
+
+#headStacking > #regularHeading {
+	top: 0px;
+	position: relative;
+	z-index: 3;
+}
+
+img#myFace {
+	display: block;
+	margin-top: 3.5vmin;
+	margin-left: auto;
+	margin-right: auto;
+	width: 28vmin;
+}
+
+body {
+	background-color: #383838;
+	margin: 0px;
+}
+
+.headStripe {
+	height:100%;
 	width:100%;
 	border:10px solid #606368;
-	margin: -8px 0px 5px -8px;
-	position: relative;
 	background-color: #606368;
+	text-align: center;
+	font-size: 3.5vmin;
 }
-.headstripe h4{
-	position: absolute;
-	font-family: Impact, fantasy;
-	font-size: 30px;
-	top: -27px;
-}
-.headstripe img{
-	position:absolute;
-	left: 180px;
-	top: 3px;
-	width:40px;
-	height:57px;
+
+.fixedHeadStripe {
+	overflow: hidden;
+	width:100%;
+	border:10px solid #606368;
+	background-color: #606368;
+	font-size: 3.5vmin;
+	top: 0px;
+	position: fixed;
+	z-index: 0;
 }
