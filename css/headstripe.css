@@ -1,3 +1,18 @@
+@keyframes onloadHeading {
+	from {
+		opacity: 0.2;
+		margin-top: -15px;
+	} to {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+#heading, .headstripe{
+	-webkit-animation: onloadHeading 1.5s;
+	animation: onloadHeading 1.5s;
+}
+
 div#heading{
 	overflow: hidden;
 	background-size: cover;
@@ -42,13 +57,13 @@ div#fixedHeadingText{
 div#headStacking {
 	top: 0px;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
 #headStacking > #regularHeading {
 	top: 0px;
 	position: relative;
-	z-index: 3;
+	z-index: 4;
 }
 
 img#myFace {
@@ -60,26 +75,37 @@ img#myFace {
 }
 
 body {
-	background-color: #383838;
+	background-color: #6b6b6b;
 	margin: 0px;
 }
 
 .headStripe {
 	height:100%;
 	width:100%;
-	border:10px solid #606368;
-	background-color: #606368;
+	border:10px solid #404040;
+	background-color: #404040;
 	text-align: center;
 	font-size: 3.5vmin;
+	color: #fff;
 }
 
 .fixedHeadStripe {
 	overflow: hidden;
 	width:100%;
-	border:10px solid #606368;
-	background-color: #606368;
+	border:10px solid #404040;
+	background-color: #404040;
 	font-size: 3.5vmin;
 	top: 0px;
 	position: fixed;
 	z-index: 0;
+}
+
+.fixedHeadStripeConcealer {
+	overflow: hidden;
+	height: 100px;
+	width:100%;
+	background-color: #6b6b6b;
+	top: 0px;
+	position: absolute;
+	z-index: 1;
 }
