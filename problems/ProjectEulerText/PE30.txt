@@ -1,9 +1,0 @@
-
-List_of_wanted = []
-
-for i in range(2, 1000000):
-    number = str(i)
-    if i == sum((int(number[j])) ** 5 for j in range(len(number))):
-        List_of_wanted.append(i)
-
-print(List_of_wanted)

@@ -1,5 +1,0 @@
-import math
-
-print(sum(math.factorial(51 - 2 * n)/(math.factorial(2 * n) * math.factorial(51 - 4 * n)) for n in range(1, 13)) + 1)
-
-
