@@ -9,8 +9,8 @@
 }
 
 #heading, .headstripe{
-	-webkit-animation: onloadHeading 1.5s;
-	animation: onloadHeading 1.5s;
+	-webkit-animation: onloadHeading 2.0s;
+	animation: onloadHeading 2.0s;
 }
 
 div#heading{
@@ -18,39 +18,29 @@ div#heading{
 	background-size: cover;
 	background-position: center;
 	background-image: url(../website_heading.jpg);
-	height: 47.5vmin;
+	height: 385px;
 }
 
 div#headingWrapper {
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 1vmin;
 }
 
 div#headingText{
-	font-family: 'caveat', cursive;
-	margin-top: 1vmin;
+    font-family: 'Noto Serif', serif;
+	margin-top: 5px;
 	color: #fff;
-	font-size: 4.5vmin;
+	font-size: 40px;
 	text-align: center;
+	z-index: 4;
 }
 
-div#stripeText {
-	margin-top: 0.5%;
-}
-
-div#fixedLinks {
-	margin-top: 1.2%;
-	float: right;
-	margin-right: 2vw;
-	color: #fff;
-}
-	
 div#fixedHeadingText{
-	font-family: 'caveat', cursive;
+    font-family: 'Noto Serif', serif;
 	margin-top: 0.5%;
+	margin-left: 10px;
 	color: #fff;
-	font-size: 4.5vmin;
+	font-size: 40px;
 	float: left;
 }
 
@@ -58,6 +48,11 @@ div#headStacking {
 	top: 0px;
 	position: relative;
 	z-index: 2;
+	height: auto;
+}
+
+div#regularHeading {
+	height: 100%;
 }
 
 #headStacking > #regularHeading {
@@ -68,41 +63,41 @@ div#headStacking {
 
 img#myFace {
 	display: block;
-	margin-top: 3.5vmin;
+	margin-top: 35px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 28vmin;
+	width: 280px;
 }
 
-body {
-	background-color: #6b6b6b;
-	margin: 0px;
-}
 
 .headStripe {
-	height:100%;
 	width:100%;
-	border:10px solid #404040;
 	background-color: #404040;
 	text-align: center;
-	font-size: 3.5vmin;
+	font-size: 30px;
 	color: #fff;
+}
+
+div#stripeText {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-family: 'Noto Serif', serif;
 }
 
 .fixedHeadStripe {
 	overflow: hidden;
 	width:100%;
-	border:10px solid #404040;
 	background-color: #404040;
-	font-size: 3.5vmin;
+	font-size: 30px;
 	top: 0px;
 	position: fixed;
 	z-index: 0;
+	margin-right: 5px;
 }
 
 .fixedHeadStripeConcealer {
 	overflow: hidden;
-	height: 100px;
+	height: 400px;
 	width:100%;
 	background-color: #6b6b6b;
 	top: 0px;

@@ -1,0 +1,17 @@
+@media (max-width: 500px) {
+    .image-text-container {
+        flex-direction: column;
+    }
+    body {
+		background-color: lightblue;
+    }
+	div#mainContent {
+		margin: 15px 5% 5% 5%;
+	}
+}
+
+body {
+	background-color: #6b6b6b;
+	margin: 0px;
+}
+
