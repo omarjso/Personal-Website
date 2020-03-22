@@ -1,5 +1,5 @@
 div#mainContent {
-	margin: 15px 20% 5% 20%;
+	margin: 2vh 20% 5% 20%;
 }
 
 body {
@@ -49,7 +49,7 @@ div#headStacking {
 	overflow: hidden;
 	width:100%;
 	background-color: #404040;
-	font-size: 30px;
+	font-size: 3vh;
 	top: 0px;
 	position: fixed;
 	z-index: 0;
@@ -67,10 +67,10 @@ div#fixedHeadingText{
 
 .fixedHeadStripeConcealer {
 	overflow: hidden;
-	height: 900px;
+	height: 50vh;
 	width:100%;
 	background-color: #6b6b6b;
-	top: -500px;
+	top: -10vh;
 	position: absolute;
 	z-index: 1;
 }
@@ -84,7 +84,7 @@ div#heading{
 	background-size: cover;
 	background-position: center;
 	background-image: url(website_heading.jpg);
-	height: 53vh;
+	height: 40vh;
 }
 
 div#headingWrapper {
@@ -94,17 +94,17 @@ div#headingWrapper {
 
 img#myFace {
 	display: block;
-	margin-top: 35px;
+	margin-top: 3vh;
 	margin-left: auto;
 	margin-right: auto;
-	width: 280px;
+	height: 30vh;
 }
 
 div#headingText{
     font-family: 'Noto Serif', serif;
-	margin-top: 5px;
+	margin-top: 1vh;
 	color: #fff;
-	font-size: 250%;
+	font-size: 4vh;
 	text-align: center;
 	z-index: 4;
 }
@@ -113,7 +113,7 @@ div#headingText{
 	width:100%;
 	background-color: #404040;
 	text-align: center;
-	font-size: 30px;
+	font-size: 3vh;
 	color: #fff;
 }
 
